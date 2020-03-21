@@ -1,0 +1,4 @@
+rootProject.name = 'mongo-orders'
+
+include 'order-service'
+include 'approve-service'
