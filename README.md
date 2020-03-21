@@ -2,32 +2,43 @@
 
 * ORDER Service
 * APPROVE Service
-* Thymelaf
 * Spring Security
 * MongoDB
-* jasypt properties encryption  TBC
 * swagger  
 
 ## Order service:
 
-* GET /api/order/{uuid}
-* PUT /api/order/status/{}
-* DELETE  /api/order/
+* Port:8081
+* http://localhost:8081/swagger-ui.html#/order-controller
+* GET http://localhost:8081/api/products
+* GET http://localhost:8081/api/productById/5e761ef6359ba2588124d043
+* GET http://localhost:8081/api/orders
+* GET http://localhost:8081/api/order/5e7560064f6bc0c0011fd20a
 
 ## Approve service:
 
-* Thymelaf FE
-* feign 
+* Port:8082
+* Spring Security
 * login/logout
-* showOrder
-* Approve/Reject (change order status)
+* GET http://localhost:8082/api/showUsers
+* GET http://localhost:8082/api/hello)
+* http://localhost:8082/swagger-ui.html
+* Basic Security (not users from DB)
 
+## Requirements 
+* Local MongoDB
 
-## SpringBoot Application
+## Build
+    cd approve-service
+    gradlew.bat build --warning-mode=all
+    cd order-service
+    gradlew.bat build --warning-mode=all
     
-    java -cp c:\tools\jasypt\jasypt-1.9.3.jar
-    SET JASYPT_ENCRYPTOR_PASSWORD=my_password
 
 ### Change Log
 
-* 2020-03-21 add Initial version 
+* 2020-03-21 Lesson 02:
+* 2020-03-21 add Order Service with MongoDB connection (orders, products) 
+* 2020-03-21 add Approve Service with MongoDB connection (users)
+* 2020-03-21 add Spring Security basic authentication (bob/password) defined in application.properties
+* 2020-03-20 add Initial version project setup 
