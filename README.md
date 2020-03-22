@@ -54,11 +54,16 @@
     
 
 ### Change Log
-* 2020-03-22 Lesson 03:
-* 2020-03-22 add frign clinet
-* 2020-03-22 add /getProducts /getProductBy/{id}
-* 2020-03-21 Lesson 02:
-* 2020-03-21 add Order Service with MongoDB connection (orders, products) 
-* 2020-03-21 add Approve Service with MongoDB connection (users)
-* 2020-03-21 add Spring Security basic authentication (bob/password) defined in application.properties
-* 2020-03-20 add Initial version project setup 
+
+    2020-03-22 Lesson 03:
+               add feign clinet
+               add /user/getOrders /user/getOrderBy/{id}
+               add /user/getProducts /user/getProductBy/{id}
+               add /getOrders /getOrderBy/{id}
+               add /getProducts /getProductBy/{id}
+    2020-03-21 Lesson 02:
+               add Order Service with MongoDB connection (orders, products) 
+               add Approve Service with MongoDB connection (users)
+               add Spring Security basic authentication (bob/password) defined in application.properties
+    2020-03-20 add Initial version project setup 
+     
