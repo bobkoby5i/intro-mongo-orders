@@ -55,6 +55,11 @@
 
 ### Change Log
 
+    2020-03-05 Lesson 05:
+               add UsersController /username /username2 /username3 /username4
+               add updateOrderStatus(String id, String customerId, String username, Order.Status newStatus)
+               add /api/setOrderStatusNotApproved/{customerId}/{id}
+               add /api/setOrderStatusApproved/{customerId}/{id}
     2020-03-22 Lesson 04:
                add feign clinet
                add /user/getOrders /user/getOrderBy/{id}

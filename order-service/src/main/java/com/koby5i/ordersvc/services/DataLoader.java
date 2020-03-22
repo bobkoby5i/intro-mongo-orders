@@ -56,7 +56,7 @@ public class DataLoader {
 
         final List<OrderLine> orderLines = Arrays.asList(ol1, ol2, ol3);
 
-        final Order order = new Order("01", UUID.randomUUID().toString(), "Customer01", "Snowbird", address, LocalDateTime.now(), LocalDateTime.now(), "DataLoader", "DataLoader", orderLines, Order.Status.NEW);
+        final Order order = new Order("01", UUID.randomUUID().toString(), "0001", "Snowbird", address, LocalDateTime.now(), LocalDateTime.now(), "DataLoader", "DataLoader", orderLines, Order.Status.NEW);
         System.out.printf("saveOrder(%s)%n", order.getOrderNumber());
         orderRepository.save(order);
 

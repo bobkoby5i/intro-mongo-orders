@@ -16,5 +16,7 @@ public interface OrderService {
 
     void delete(String id);
 
+    String updateOrderStatus(String id, String customerId, String username, Order.Status newStatus);
+
 //    Product saveOrUpdateProductForm(ProductForm productForm);
 }
