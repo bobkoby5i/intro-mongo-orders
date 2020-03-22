@@ -6,6 +6,8 @@
 * MongoDB
 * swagger  
 
+![HighLevelArchitecture](./docs/high_level.jpg)
+
 ## Order service:
 
 * Port:8081
@@ -18,15 +20,28 @@
 ## Approve service:
 
 * Port:8082
-* Spring Security
+* Spring Security 
+* Users defined in MongoDB db.users
 * login/logout
+### LOCAL API 
+* .antMatchers("/api/**").permitAll()
 * GET http://localhost:8082/api/showUsers
 * GET http://localhost:8082/api/hello)
 * http://localhost:8082/swagger-ui.html
-* Basic Security (not users from DB)
-* permitAll()
+### Feign client proxy to ORDER Service 
+#### Open
+* .antMatchers("/**").permitAll()
 * http://localhost:8082/getProductBy/{id} -> http://localhost:8081/api/productById/{id} 
 * http://localhost:8082/getProducts -> http://localhost:8081/api/products
+* http://localhost:8082/getOrderById/{id} -> http://localhost:8081/api/orderById/{id}
+* http://localhost:8082/getOrders -> http://localhost:8081/api/orders
+#### Protected
+* .antMatchers("/user/**").hasAnyRole("USER", "ADMIN")
+* http://localhost:8082/user/getProductById/{id}
+* http://localhost:8082/user/getProducts
+* http://localhost:8082/user/getOrderById/{id}
+* http://localhost:8082/user/getOrders
+
 
 ## Requirements 
 * Local MongoDB

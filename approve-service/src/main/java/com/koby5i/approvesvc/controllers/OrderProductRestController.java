@@ -25,17 +25,52 @@ public class OrderProductRestController {
     }
 
 
-    @RequestMapping(value = "/getProductBy/{id}", method = RequestMethod.GET)
+    @RequestMapping(value = "/getProductById/{id}", method = RequestMethod.GET)
     public ResponseEntity<?> getProductById(@PathVariable("id") String id){
         return new ResponseEntity<>(feignClientInterface.getProductById(id), HttpStatus.OK);
 
     }
 
     @RequestMapping(value = "/getProducts", method = RequestMethod.GET)
-    public ResponseEntity<?> getItems(){
+    public ResponseEntity<?> getProducts(){
         return new ResponseEntity<>(feignClientInterface.getProducts(), HttpStatus.OK);
 
     }
 
+    @RequestMapping(value = "/getOrderById/{id}", method = RequestMethod.GET)
+    public ResponseEntity<?> getOrderById(@PathVariable("id") String id){
+        return new ResponseEntity<>(feignClientInterface.getOrderById(id), HttpStatus.OK);
+
+    }
+
+    @RequestMapping(value = "/getOrders", method = RequestMethod.GET)
+    public ResponseEntity<?> getOrders(){
+        return new ResponseEntity<>(feignClientInterface.getOrders(), HttpStatus.OK);
+
+    }
+
+    @RequestMapping(value = "/user/getProductById/{id}", method = RequestMethod.GET)
+    public ResponseEntity<?> userGetProductById(@PathVariable("id") String id){
+        return new ResponseEntity<>(feignClientInterface.getProductById(id), HttpStatus.OK);
+
+    }
+
+    @RequestMapping(value = "/user/getProducts", method = RequestMethod.GET)
+    public ResponseEntity<?> userGetProducts(){
+        return new ResponseEntity<>(feignClientInterface.getProducts(), HttpStatus.OK);
+
+    }
+
+    @RequestMapping(value = "/user/getOrderById/{id}", method = RequestMethod.GET)
+    public ResponseEntity<?> userGetOrderById(@PathVariable("id") String id){
+        return new ResponseEntity<>(feignClientInterface.getOrderById(id), HttpStatus.OK);
+
+    }
+
+    @RequestMapping(value = "/user/getOrders", method = RequestMethod.GET)
+    public ResponseEntity<?> userGetOrders(){
+        return new ResponseEntity<>(feignClientInterface.getOrders(), HttpStatus.OK);
+
+    }
 
 }
