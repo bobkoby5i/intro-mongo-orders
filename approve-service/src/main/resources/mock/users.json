@@ -1,26 +1,32 @@
 [
 {
   "_id" : ObjectId("5e76597787b1bbe08527dc53"),
+  "customerId" : "0001",
+  "customerName" : "Snowbird",
   "username" : "bob@gmail.com",
   "password" : "$2a$10$Uquje0jeqhm0kzRFv1pqu.6DPS2dijCg2MTOP3ubOBPtXtIopoqrC",
-  "active" : true,
+  "enabled" : true,
+  "accountNonExpired" : true,
+  "accountNonLocked" : true,
+  "credentialsNonExpired" : true,
   "authorities" : [
-    "ROLE_USER",
     "ROLE_ADMIN",
-    "ROLE_MANAGER"
-  ],
-  "customerName" : "Snowbird",
-  "customerId" : "0001"
+    "ROLE_MANAGER",
+    "ROLE_USER"
+  ]
 },
 {
   "_id" : ObjectId("5e76608987b1bbe08527e178"),
+  "customerId" : "0001",
+  "customerName" : "Snowbird",
   "username" : "tom@gmail.com",
   "password" : "$2a$10$Uquje0jeqhm0kzRFv1pqu.6DPS2dijCg2MTOP3ubOBPtXtIopoqrC",
-  "active" : true,
+  "enabled" : true,
+  "accountNonExpired" : true,
+  "accountNonLocked" : true,
+  "credentialsNonExpired" : true,
   "authorities" : [
     "ROLE_USER"
-  ],
-  "customerName" : "Snowbird",
-  "customerId" : "0001"
+  ]
 }
-]
+ ]
