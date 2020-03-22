@@ -55,12 +55,19 @@
 
 ### Change Log
 
-    2020-03-22 Lesson 03:
+    2020-03-22 Lesson 04:
                add feign clinet
                add /user/getOrders /user/getOrderBy/{id}
                add /user/getProducts /user/getProductBy/{id}
                add /getOrders /getOrderBy/{id}
                add /getProducts /getProductBy/{id}
+               add /public/error/404.html
+               add /public/error/401.html
+               add /public/index.html
+    2020-03-21 Lesson 03: 
+               add Spring Security Approve Service users validated in MongoDB db.users
+               add greeting.html
+               add @Secured("ROLE_ADMIN") /admin/index                
     2020-03-21 Lesson 02:
                add Order Service with MongoDB connection (orders, products) 
                add Approve Service with MongoDB connection (users)
