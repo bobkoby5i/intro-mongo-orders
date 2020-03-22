@@ -25,9 +25,9 @@ public class OrderController {
     }
 
 
-    @RequestMapping(value = "/api/order/{id}", method = RequestMethod.GET)
+    @RequestMapping(value = "/api/orderById/{id}", method = RequestMethod.GET)
     public Order getLab(@PathVariable String id){
-        System.out.println("GET /api/order/{id} id=" + id);
+        System.out.println("GET /api/orderById/{id} id=" + id);
 
         Order order = orderService.getById(id);
         //product.getId().toHexString()

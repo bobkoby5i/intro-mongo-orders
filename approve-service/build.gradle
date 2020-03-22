@@ -27,6 +27,7 @@ dependencies {
 	// lombok to simplify
 	compileOnly("org.projectlombok:lombok")
 	annotationProcessor('org.projectlombok:lombok:1.18.10')
+	compile group: 'org.springframework.cloud', name: 'spring-cloud-starter-openfeign', version: '2.2.1.RELEASE' //NEW FIXED
 
 
 

@@ -3,9 +3,11 @@ package com.koby5i.approvesvc;
 import com.koby5i.approvesvc.repositories.UserRepository;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
 
 @SpringBootApplication
+@EnableFeignClients
 //@EnableJpaRepositories(basePackageClasses = UserRepository.class)
 @EnableMongoRepositories(basePackageClasses = UserRepository.class)
 public class ApproveSvcApplication {

@@ -24,6 +24,9 @@
 * GET http://localhost:8082/api/hello)
 * http://localhost:8082/swagger-ui.html
 * Basic Security (not users from DB)
+* permitAll()
+* http://localhost:8082/getProductBy/{id} -> http://localhost:8081/api/productById/{id} 
+* http://localhost:8082/getProducts -> http://localhost:8081/api/products
 
 ## Requirements 
 * Local MongoDB
@@ -36,7 +39,9 @@
     
 
 ### Change Log
-
+* 2020-03-22 Lesson 03:
+* 2020-03-22 add frign clinet
+* 2020-03-22 add /getProducts /getProductBy/{id}
 * 2020-03-21 Lesson 02:
 * 2020-03-21 add Order Service with MongoDB connection (orders, products) 
 * 2020-03-21 add Approve Service with MongoDB connection (users)
