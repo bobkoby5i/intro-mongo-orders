@@ -34,7 +34,9 @@ public class MyUserDetails implements UserDetails {
         this.accountNonExpired = user.getAccountNonExpired();
         this.accountNonLocked  = user.getAccountNonLocked();
         this.credentialsNonExpired = user.getCredentialsNonExpired();
-        this.authorities = Arrays.stream(user.getRoles().split(","))
+        List<String> authorities = user.getAuthorities();
+        String str = String.join(", ", authorities);
+        this.authorities = Arrays.stream(str.split(","))
                 .map(SimpleGrantedAuthority::new)
                 .collect(Collectors.toList());
     }
