@@ -28,5 +28,35 @@
   "authorities" : [
     "ROLE_USER"
   ]
+},
+{
+  "_id" : ObjectId("5e77e9d055807074eab4f918"),
+  "customerId" : "0002",
+  "customerName" : "Arapahoe",
+  "username" : "max@gmail.com",
+  "password" : "$2a$10$Uquje0jeqhm0kzRFv1pqu.6DPS2dijCg2MTOP3ubOBPtXtIopoqrC",
+  "enabled" : true,
+  "accountNonExpired" : true,
+  "accountNonLocked" : true,
+  "credentialsNonExpired" : true,
+  "authorities" : [
+    "ROLE_ADMIN",
+    "ROLE_MANAGER",
+    "ROLE_USER"
+  ]
+},
+{
+  "_id" : ObjectId("5e77e9f355807074eab4f927"),
+  "customerId" : "0002",
+  "customerName" : "Arapahoe",
+  "username" : "sam@gmail.com",
+  "password" : "$2a$10$Uquje0jeqhm0kzRFv1pqu.6DPS2dijCg2MTOP3ubOBPtXtIopoqrC",
+  "enabled" : true,
+  "accountNonExpired" : true,
+  "accountNonLocked" : true,
+  "credentialsNonExpired" : true,
+  "authorities" : [
+    "ROLE_USER"
+  ]
 }
- ]
+]
