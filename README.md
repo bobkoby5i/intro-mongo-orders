@@ -4,7 +4,9 @@
 * APPROVE Service
 * Spring Security
 * MongoDB
-* swagger  
+* FeignClient
+* swagger 
+* lombok 
 
 ![HighLevelArchitecture](./docs/high_level.jpg)
 
@@ -16,6 +18,8 @@
 * GET http://localhost:8081/api/productById/5e761ef6359ba2588124d043
 * GET http://localhost:8081/api/orders
 * GET http://localhost:8081/api/order/5e7560064f6bc0c0011fd20a
+* PUT http://localhost:8081//api/setOrderStatusApproved/{customerId}/{id}
+* PUT http://localhost:8081//api/setOrderStatusNotApproved/{customerId}/{id}
 
 ## Approve service:
 
@@ -23,6 +27,8 @@
 * Spring Security 
 * Users defined in MongoDB db.users
 * login/logout
+* http://localhost:8082/index.html
+
 ### LOCAL API 
 * .antMatchers("/api/**").permitAll()
 * GET http://localhost:8082/api/showUsers
@@ -31,7 +37,7 @@
 ### Feign client proxy to ORDER Service 
 #### Open
 * .antMatchers("/**").permitAll()
-* http://localhost:8082/getProductBy/{id} -> http://localhost:8081/api/productById/{id} 
+* http://localhost:8082/getProductById/{id} -> http://localhost:8081/api/productById/{id} 
 * http://localhost:8082/getProducts -> http://localhost:8081/api/products
 * http://localhost:8082/getOrderById/{id} -> http://localhost:8081/api/orderById/{id}
 * http://localhost:8082/getOrders -> http://localhost:8081/api/orders
@@ -41,6 +47,8 @@
 * http://localhost:8082/user/getProducts
 * http://localhost:8082/user/getOrderById/{id}
 * http://localhost:8082/user/getOrders
+* http://localhost:8082/orderApproved/{id} -> /api/setOrderStatusApproved/{customerId}/{id}
+* http://localhost:8082/orderNotApproved/{id} -> /api/setOrderStatusNotApproved/{customerId}/{id}
 
 
 ## Requirements 
@@ -55,17 +63,21 @@
 
 ### Change Log
 
-    2020-03-05 Lesson 05:
+    2020-03-22 Lesson 05:
+               add Customer: 0002 max@gmail.com[ADMIN,MANAGER] sam@gmail.com[USER]
+               add Customer: 0002 bob@gmail.com[ADMIN,MANAGER] tom@gmail.com[USER] 
+               add http://localhost:8082/user/orderApproved/{id} requires login
                add UsersController /username /username2 /username3 /username4
                add updateOrderStatus(String id, String customerId, String username, Order.Status newStatus)
                add /api/setOrderStatusNotApproved/{customerId}/{id}
                add /api/setOrderStatusApproved/{customerId}/{id}
+               add /public/error/403.html
     2020-03-22 Lesson 04:
                add feign clinet
-               add /user/getOrders /user/getOrderBy/{id}
-               add /user/getProducts /user/getProductBy/{id}
-               add /getOrders /getOrderBy/{id}
-               add /getProducts /getProductBy/{id}
+               add /user/getOrders /user/getOrderById/{id}
+               add /user/getProducts /user/getProductById/{id}
+               add /getOrders /getOrderById/{id}
+               add /getProducts /getProductById/{id}
                add /public/error/404.html
                add /public/error/401.html
                add /public/index.html

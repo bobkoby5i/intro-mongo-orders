@@ -5,10 +5,7 @@ import com.koby5i.approvesvc.domains.dto.OrderDto;
 import com.koby5i.approvesvc.domains.dto.ProductDto;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -30,6 +27,11 @@ public interface FeignClientInterface {
     @GetMapping(path = "/api/productById/{id}", consumes = MediaType.APPLICATION_JSON_UTF8_VALUE)
     ProductDto getProductById(@PathVariable("id") String id);
 
+    @PutMapping(path = "/api/setOrderStatusApproved/{customerId}/{id}", consumes = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    String OrderApprovedById(@PathVariable("customerId") String customerId, @PathVariable("id") String id);
+
+    @PutMapping(path = "/api/setOrderStatusNotApproved/{customerId}/{id}", consumes = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    String OrderNotApprovedById(@PathVariable("customerId") String customerId, @PathVariable("id") String id);
 
 
 }

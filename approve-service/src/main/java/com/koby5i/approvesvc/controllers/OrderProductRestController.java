@@ -1,7 +1,12 @@
 package com.koby5i.approvesvc.controllers;
 
+import com.koby5i.approvesvc.domains.User;
 import com.koby5i.approvesvc.services.FeignClientInterface;
+import com.koby5i.approvesvc.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.AnonymousAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -13,8 +18,17 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 public class OrderProductRestController {
 
+    private UserService userService;
+
     @Autowired
     private FeignClientInterface feignClientInterface;
+
+    @Autowired
+    public void setUserService(UserService userService) {
+        this.userService = userService;
+    }
+
+
 
     public void setWhClient(FeignClientInterface feignClientInterface) {
         this.feignClientInterface = feignClientInterface;
@@ -73,4 +87,43 @@ public class OrderProductRestController {
 
     }
 
+    @RequestMapping(value = "/user/orderApproved/{id}", method = RequestMethod.GET)
+    public String userOrderApprovedById(@PathVariable("id") String id){
+
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        if ((authentication instanceof AnonymousAuthenticationToken)) {
+            return "Sorry, currentUserName can not be determined. User not authenticated yet. Go to /user to login";
+        }
+
+        String currentUserName = authentication.getName();
+        User user = userService.getByUsername(currentUserName);
+        String customerId = user.getCustomerId();
+        System.out.printf("/user/orderApproved/{%s} by customerId: %s username: %s %n ", id , customerId, currentUserName);
+        String response = feignClientInterface.OrderApprovedById(customerId, id);
+
+        return response;
+
+    }
+
+    @RequestMapping(value = "/user/orderNotApproved/{id}", method = RequestMethod.GET)
+    public String userOrderNotApprovedById(@PathVariable("id") String id){
+
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        if ((authentication instanceof AnonymousAuthenticationToken)) {
+            return "Sorry, currentUserName can not be determined. User not authenticated yet. Go to /user to login";
+        }
+
+        String currentUserName = authentication.getName();
+        User user = userService.getByUsername(currentUserName);
+        String customerId = user.getCustomerId();
+        System.out.printf("/user/orderApproved/{%s} by customerId: %s username: %s %n ", id , customerId, currentUserName);
+        String response = feignClientInterface.OrderNotApprovedById(customerId, id);
+
+        return response;
+
+    }
+
+
 }
+
+
