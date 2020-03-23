@@ -23,14 +23,19 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public List<User> listAll() {
-        List<User> products = new ArrayList<>();
-        userRepository.findAll().forEach(products::add); //fun with Java 8
-        return products;
+        List<User> users = new ArrayList<>();
+        userRepository.findAll().forEach(users::add); //fun with Java 8
+        return users;
     }
 
     @Override
     public User getById(String id) {
         return userRepository.findById(id).orElse(null);
+    }
+
+    @Override
+    public User getByUsername(String name) {
+        return userRepository.findByUsername(name).orElse(null);
     }
 
     @Override

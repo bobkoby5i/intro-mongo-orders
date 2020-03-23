@@ -3,13 +3,47 @@
 <head>
     <title>Welcome page</title>
     <style>
-           body { background-color: #2a2627; margin:20px;}
-           h1 {color: #ffffff}
+           body { background-color: #2CCFFE6; margin:20px;}
+           h1 {color: #4C0099}
+           h4 {color: #4EA6B66}
     </style>
 </head>
 <body>
 
-<h1>My welcome page</h1>
+<h1>My welcome page. index.html</h1>
+
+<BR>
+<h4>Public</h4>
+<div>
+    <div><a href="/login">login</a></div>
+    <div><a href="/logout">logout</a></div>
+    <div><a href="/username">username</a></div>
+    <BR>
+    <div><a href="/getOrders">/user/getOrders</a></div>
+    <div><a href="/getOrderById/{id}">/user/getOrderBy/{id}</a></div>
+    <div><a href="/getProducts">/user/getProducts</a></div>
+    <div><a href="/getProductById/{id}">/user/getProductBy/{id}</a></div>
+</div>
+
+<BR>
+<h4>Authenticated Users</h4>
+<div>
+    <div><a href="/login">login</a></div>
+    <div><a href="/logout">logout</a></div>
+    <div><a href="/username">username</a></div>
+    <BR>
+    <div><a href="/user/getOrders">/user/getOrders</a></div>
+    <div><a href="/user/getOrderById/{id}">/user/getOrderBy/{id}</a></div>
+    <div><a href="/user/getProducts">/user/getProducts</a></div>
+    <div><a href="/user/getProductById/{id}">/user/getProductBy/{id}</a></div>
+    <div><a href="/user/orderApproved/{id}">/user/orderApproved/{id}</a> - must login to get customerId</div>
+    <div><a href="/user/orderNotApproved/{id}">/user/orderNotApproved/{id}</a> - must login to get customerId</div>
+</div>
+
+
+
+
+
 <p></p>
 </body>
 </html>

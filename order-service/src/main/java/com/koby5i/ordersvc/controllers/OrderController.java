@@ -36,4 +36,23 @@ public class OrderController {
         return order;
     }
 
+    @RequestMapping(value = "/api/setOrderStatusApproved/{customerId}/{id}", method = RequestMethod.PUT)
+    public String setOrderStatusApproved(@PathVariable String customerId, @PathVariable String id){
+        System.out.println("GET /api/setOrderStatusApproved/{customerId}/{id} id=" + id);
+
+        String response = orderService.updateOrderStatus(id, customerId, "feignClient", Order.Status.APPROVED);
+
+        return response;
+    }
+
+    @RequestMapping(value = "/api/setOrderStatusNotApproved/{customerId}/{id}", method = RequestMethod.PUT)
+    public String setOrderStatusNotApproved(@PathVariable String customerId, @PathVariable String id){
+        System.out.println("GET /api/setOrderStatusNotApproved/{customerId}/{id} id=" + id);
+
+        String response = orderService.updateOrderStatus(id, customerId, "feignClient", Order.Status.NOT_APPROVED);
+
+        return response;
+    }
+
+
 }
