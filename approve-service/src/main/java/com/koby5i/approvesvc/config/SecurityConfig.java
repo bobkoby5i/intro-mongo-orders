@@ -1,5 +1,6 @@
 package com.koby5i.approvesvc.config;
 
+import com.koby5i.approvesvc.services.MyUserDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -61,7 +62,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     //DataSource dataSource;
 
     @Autowired
-    UserDetailsService userDetailsService;
+    MyUserDetailsService userDetailsService;
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {

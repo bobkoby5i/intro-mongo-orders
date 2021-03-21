@@ -1,0 +1,45 @@
+= Hello, AsciiDoc!
+Doc Writer <doc@example.com>
+
+An introduction to http://asciidoc.org[AsciiDoc].
+
+== First Section
+
+* item 1
+* item 2
+
+[source,ruby]
+puts "Hello, World!"
+
+[TIP]
+
+
+== Section Level 1
+=== Section Level 2
+==== Section Level 3
+===== Section Level 4
+====== Section Level 5
+
+. Step 1
+. Step 2
+. Step 3
+
+
+* [*] checked
+* [x] also checked
+* [ ] not checked
+*     normal list item
+
+bold *constrained* & **un**constrained
+
+italic _constrained_ & __un__constrained
+
+bold italic *_constrained_* & **__un__**constrained
+
+monospace `constrained` & ``un``constrained
+
+monospace bold `*constrained*` & ``**un**``constrained
+
+monospace italic `_constrained_` & ``__un__``constrained
+
+monospace bold italic `*_constrained_*` & ``**__un__**``constrained

@@ -13,24 +13,22 @@ import java.util.List;
 @FeignClient(name = "apiClient", url = "http://localhost:8081")
 public interface FeignClientInterface {
 
-    @GetMapping(path = "/api/orders", consumes = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    @GetMapping(path = "/api/orders", consumes = MediaType.APPLICATION_JSON_VALUE)
     List<OrderDto> getOrders();
 
-
-    @GetMapping(path = "/api/orderById/{id}", consumes = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    @GetMapping(path = "/api/orderById/{id}", consumes = MediaType.APPLICATION_JSON_VALUE)
     OrderDto getOrderById(@PathVariable("id") String id);
 
-
-    @GetMapping(path = "/api/products", consumes = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    @GetMapping(path = "/api/products", consumes = MediaType.APPLICATION_JSON_VALUE)
     List<ProductDto> getProducts();
 
-    @GetMapping(path = "/api/productById/{id}", consumes = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    @GetMapping(path = "/api/productById/{id}", consumes = MediaType.APPLICATION_JSON_VALUE)
     ProductDto getProductById(@PathVariable("id") String id);
 
-    @PutMapping(path = "/api/setOrderStatusApproved/{customerId}/{id}", consumes = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    @PutMapping(path = "/api/setOrderStatusApproved/{customerId}/{id}", consumes = MediaType.APPLICATION_JSON_VALUE)
     String OrderApprovedById(@PathVariable("customerId") String customerId, @PathVariable("id") String id);
 
-    @PutMapping(path = "/api/setOrderStatusNotApproved/{customerId}/{id}", consumes = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    @PutMapping(path = "/api/setOrderStatusNotApproved/{customerId}/{id}", consumes = MediaType.APPLICATION_JSON_VALUE)
     String OrderNotApprovedById(@PathVariable("customerId") String customerId, @PathVariable("id") String id);
 
 
